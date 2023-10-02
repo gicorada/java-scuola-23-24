@@ -1,4 +1,4 @@
-package eserciziario.cap7;
+package eserciziario.cap7.store;
 
 public class Customer {
     private String name;

@@ -1,4 +1,4 @@
-package eserciziario.cap7;
+package eserciziario.cap7.store;
 
 import java.util.Scanner;
 
