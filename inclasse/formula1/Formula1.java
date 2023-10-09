@@ -1,3 +1,5 @@
+package inclasse.formula1;
+
 public class Formula1 {
     public static void main(String[] args) {
         Gara monza = new Gara("Monza");
@@ -12,6 +14,7 @@ public class Formula1 {
 
         monza.start();
         // Giro 1
+		System.out.println("Giro 1");
         monza.effettuaSorpasso("Alonso");
         monza.effettuaSorpasso("Stroll");
         monza.fuoriGara("Bottas");
@@ -20,6 +23,7 @@ public class Formula1 {
 
 
         // Giro 2
+		System.out.println("Giro 2");
         monza.fuoriGara("Giovinazzi");
         monza.effettuaSorpasso("Hamilton");
 
@@ -28,11 +32,13 @@ public class Formula1 {
 
         // Giro 3
 
-
+		System.out.println("Giro 3");
+		
         System.out.println(monza.classifica());
 
 
         // Giro 4
+		System.out.println("Giro 4");
         monza.fuoriGara("Hamilton");
         monza.effettuaSorpasso("Verstappen");
         monza.pitStop("Alonso");
@@ -41,6 +47,7 @@ public class Formula1 {
 
 
         // Giro 5
+		System.out.println("Giro 5");
         monza.pitStop("Schumacher");
 
 

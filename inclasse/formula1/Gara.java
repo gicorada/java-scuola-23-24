@@ -1,3 +1,5 @@
+package inclasse.formula1;
+
 import java.util.ArrayList;
 
 public class Gara {
@@ -7,19 +9,34 @@ public class Gara {
 
     public Gara(String nome) {
         nomeGara = nome;
+		inCorso = false;
         piloti = new ArrayList<>();
     }
 
+	/**
+	 * Metodo per aggiungere un signolo pilota alla gara
+	 * @param p Pilota da inserire
+	 */
     public void aggiungiPilota(Pilota p) {
         piloti.add(p);
     }
 
+	/**
+	 * Metodo per aggiungere una lista di piloti alla gara
+	 * @param nomi Array contenente i nomi dei piloti
+	 * @param scuderie Array contenente le scuderie a cui appartengono i rispettivi piloti
+	 * @param punti Array contenente i punti dei rispettivi piloti
+	 */
     public void grigliaDiPartenza(String[] nomi, String[] scuderie, int[] punti) {
         for(int i = 0; i < nomi.length; i++) {
             aggiungiPilota(new Pilota(nomi[i], scuderie[i], punti[i]));
         }
     }
 
+	/**
+	 * Metodo che restituisce una stringa formattata contenente la classifica
+	 * @return Stringa contenente la classifica
+	 */
     public String classifica() {
         String cl = "";
 
@@ -30,10 +47,18 @@ public class Gara {
         return cl;
     }
 
+	/**
+	 * Metodo che fa partire la gara
+	 */
     public void start() {
         inCorso = true;
     }
 
+	/**
+	 * Metodo privato che restituisce la posizione corrente del pilota di cui è fornito il nome
+	 * @param nomeP Nome del pilota da ricercare
+	 * @return Posizione del pilota
+	 */
     private int posCorrente(String nomeP) {
         for (int i = 0; i < piloti.size(); i++) {
             if(piloti.get(i).getNome().equals(nomeP)) return i;
@@ -42,10 +67,19 @@ public class Gara {
         return -1;
     }
 
+	/**
+	 * Metodo per mandare fuori gara un pilota
+	 * @param n Nome del pilota da espellere
+	 */
     public void fuoriGara(String n) {
-        piloti.remove(posCorrente(n));
+		int pos = posCorrente(n);
+        if(pos >= 0) piloti.remove(posCorrente(n));
     }
 
+	/**
+	 * Metodo per far effettuare un sorpasso ad un pilota
+	 * @param n Nome del pilota da far avanzare
+	 */
     public void effettuaSorpasso(String n) {
         int pos = posCorrente(n);
         if(pos > 0) {
@@ -54,6 +88,10 @@ public class Gara {
         }
     }
 
+	/**
+	 * Metodo per far fermare al pit stop un pilota
+	 * @param n Nome del pilota da far fermare al pit stop
+	 */
     public void pitStop(String n) {
         int pos = posCorrente(n);
         if(pos <= piloti.size() - 4) {

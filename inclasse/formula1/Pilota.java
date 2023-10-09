@@ -1,3 +1,5 @@
+package inclasse.formula1;
+
 public class Pilota {
     private String nome;
     private String scuderia;
