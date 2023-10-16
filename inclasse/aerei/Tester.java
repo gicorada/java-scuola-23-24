@@ -9,28 +9,79 @@ public class Tester {
 		TurboElica t1 = new TurboElica("Turboelica di test", 300, 5000);
 		TurboElica t2 = new TurboElica("Secondo turboelica di test", 300, 400);
 
-		System.out.println(a1);
-		System.out.println(j1);
-		System.out.println(t1);
-		System.out.println(a2);
-		System.out.println(j2);
-		System.out.println(t2);
+		final int TEST_OBJ = 2;
 
+		Aeromobile aTester[] = {a1, a2, j1, t1};
+		Aeromobile jTester[] = {j1, j2, a1, t1};
+		Aeromobile tTester[] = {t1, t2, a1, j1};
 
-		System.out.println(a1.piuPotenteDi(a2)); //true
-		System.out.println(a2.piuPotenteDi(a1)); //false
-		System.out.println(a1.piuPotenteDi(j1)); //false (diverso)
-
+		for(int i = 0; i < TEST_OBJ; i++) {
+			for(int j = 0; j < aTester.length; j++) {
+				try {
+				System.out.println(aTester[i].piuPotenteDi(aTester[j])); //lancia un'eccezione
+				} catch (IllegalArgumentException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+		}
+		/*
+		 * Dovrebbe essere:
+		 * true
+		 * false
+		 * eccezione
+		 * eccezione
+		 * false
+		 * false
+		 * eccezione
+		 * eccezione
+		 */
 		System.out.println("\n");
 
-		System.out.println(j1.piuPotenteDi(j2)); //true
-		System.out.println(j2.piuPotenteDi(j1)); //false
-		System.out.println(j1.piuPotenteDi(a1)); //false (diverso)
 
+		
+		for(int i = 0; i < TEST_OBJ; i++) {
+			for(int j = 0; j < jTester.length; j++) {
+				try {
+				System.out.println(jTester[i].piuPotenteDi(jTester[j])); //lancia un'eccezione
+				} catch (IllegalArgumentException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+		}
+		/*
+		 * Dovrebbe essere:
+		 * true
+		 * false
+		 * eccezione
+		 * eccezione
+		 * false
+		 * false
+		 * eccezione
+		 * eccezione
+		 */
 		System.out.println("\n");
 
-		System.out.println(t1.piuPotenteDi(t2)); //true
-		System.out.println(t2.piuPotenteDi(t1)); //false
-		System.out.println(t1.piuPotenteDi(j1)); //false (diverso)
+
+
+		for(int i = 0; i < TEST_OBJ; i++) {
+			for(int j = 0; j < tTester.length; j++) {
+				try {
+				System.out.println(tTester[i].piuPotenteDi(tTester[j])); //lancia un'eccezione
+				} catch (IllegalArgumentException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+		}
+		/*
+		 * Dovrebbe essere:
+		 * true
+		 * false
+		 * eccezione
+		 * eccezione
+		 * false
+		 * false
+		 * eccezione
+		 * eccezione
+		 */
 	}
 }

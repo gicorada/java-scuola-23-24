@@ -1,9 +1,25 @@
+/**
+ * Classe che rappresenta un aliante con una efficienza
+ */
 public class Aliante extends Aeromobile {
 	private int efficienza;
 
+	/**
+	 * Costruttore
+	 * @param sigla Nome dell'aliante
+	 * @param efficienza Numero intero che rappresenta l'efficienza dell'aliante
+	 */
 	public Aliante(String sigla, int efficienza) {
 		super(sigla);
 		this.efficienza = efficienza;
+	}
+
+	/**
+	 * Getter dell'efficienza dell'aliante
+	 * @return
+	 */
+	public int getEfficienza() {
+		return efficienza;
 	}
 
 	@Override
@@ -13,13 +29,9 @@ public class Aliante extends Aeromobile {
 
 	@Override
 	public boolean piuPotenteDi(Aeromobile o) {
-		if(o.getClass() != getClass()) return false;
+		if(o.getClass() != getClass()) throw new IllegalArgumentException("Un aliante non può essere confrontato con un " + o.getTipoAeromobile());
 		Aliante a = (Aliante) o;
 		return efficienza > a.efficienza;
-	}
-
-	public int getEfficienza() {
-		return efficienza;
 	}
 
 	@Override
