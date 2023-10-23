@@ -9,6 +9,18 @@ public class Instructor extends Person {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if(super.equals(o)) return true;
+        Instructor s = (Instructor) o;
+        return salario == s.salario;
+    }
+
+    @Override
+    public Object clone() {
+        return super.clone();
+    }
+
+    @Override
     public String toString() {
         return super.toString() + ", Salario=" + salario;
     }
