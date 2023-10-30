@@ -1,4 +1,4 @@
-package combattenti;
+package inclasse.Combattenti.combattenti;
 
 /**
  * Classe che rappresenta un eroe, che può attaccare solo licantropi

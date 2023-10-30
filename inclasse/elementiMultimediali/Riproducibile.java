@@ -1,3 +1,5 @@
+package inclasse.elementiMultimediali;
+
 public interface Riproducibile {
 	/**
 	 * Getter della durata dell'elemento riproducibile

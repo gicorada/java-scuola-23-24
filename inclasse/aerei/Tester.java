@@ -1,3 +1,5 @@
+package inclasse.aerei;
+
 public class Tester {
 	public static void main(String[] args) {
 		Aliante a1 = new Aliante("Aliante di test", 20);

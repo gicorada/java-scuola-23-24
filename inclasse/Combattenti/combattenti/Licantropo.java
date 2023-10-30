@@ -1,4 +1,4 @@
-package combattenti;
+package inclasse.Combattenti.combattenti;
 
 /**
  * Classe che rappresenta un licantropo, che può trasformarsi in lupo

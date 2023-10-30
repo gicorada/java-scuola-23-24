@@ -1,3 +1,5 @@
+package inclasse.aerei;
+
 /**
  * Classe che rappresenta un aeromobile astratto, identificabile con una sigla
  */

@@ -1,3 +1,5 @@
+package inclasse.elementiMultimediali;
+
 /**
  * Classe che rappresenta un elemento multimediale di tipo audio
  */

@@ -1,3 +1,5 @@
+package inclasse.elementiMultimediali;
+
 /**
  * Classe astratta che rappresenta un generico elemento multimediale
  */

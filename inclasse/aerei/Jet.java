@@ -1,3 +1,5 @@
+package inclasse.aerei;
+
 /**
  * Classe che rappresenta un Jet con un numero di motori
  */

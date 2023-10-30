@@ -1,4 +1,4 @@
-package combattenti;
+package inclasse.Combattenti.combattenti;
 
 /**
  * Classe che rappresenta un generico combattente

@@ -1,4 +1,4 @@
-package combattenti;
+package inclasse.Combattenti.combattenti;
 
 import java.util.ArrayList;
 

@@ -1,3 +1,5 @@
+package inclasse.elementiMultimediali;
+
 public interface Illuminabile {
 	/**
 	 * Metodo per aumentare la luminosità dell'oggetto

@@ -1,3 +1,5 @@
+package inclasse.aerei;
+
 public interface Aeromodello {
 	/**
 	 * Getter della tipologia di aeromobile
