@@ -12,7 +12,6 @@ public class RimuoviRigheVuoteInizioFineFile {
 
         File f = new File(path);
         Scanner s = new Scanner(f);
-        Scanner in = new Scanner(System.in);
         ArrayList<String> righe = new ArrayList<>();
 
         // Rimuovo le righe vuote all'inizio del file e alla fine del file
