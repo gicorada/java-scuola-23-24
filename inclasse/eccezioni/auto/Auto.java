@@ -12,8 +12,6 @@ public class Auto {
 	 * @param litri Litri consumati dall'auto nel percorso
 	 */
 	public Auto(String nome, int km, int litri) throws IllegalArgumentException {
-		// Soluzione 2
-		
 		if(km < 0) throw new IllegalArgumentException("I km percorsi non possono essere negativi");
 		if(litri < 0) throw new IllegalArgumentException("I litri consumati non possono essere negativi");
 		if(litri == 0 && km > 0) throw new IllegalArgumentException("I litri consumati devono essere maggiori di zero se i km percorsi non sono 0");
@@ -28,13 +26,6 @@ public class Auto {
 	 * Calcola la resa dell'auto, in base ai km percorsi e ai litri consumati forniti
 	 */
 	public double resa() {
-		// Soluzione 1
-		
-		/*
-		if(km < 0) throw new ArithmeticException("I km percorsi non possono essere negativi");
-		if(litri < 0) throw new ArithmeticException("I litri consumati non possono essere negativi");
-		if(litri == 0 && km > 0) throw new ArithmeticException("I litri consumati devono essere maggiori di zero se i km percorsi non sono 0");
-		*/
 		return km/(double)litri;
 	}
 

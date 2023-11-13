@@ -42,19 +42,7 @@ public class GestoreAuto {
 		String s = "";
 
 		s += "\nResa delle auto:\n";
-		// Soluzione 1
-		/*/
-		for (Auto a : auto) {
-			try {
-				s += String.format("%s. La resa è di %.2f km/l\n", a.toString(), a.resa());
-			} catch (ArithmeticException e) {
-				System.out.println("Auto " + a.getNome() + ": " + e.getMessage());
-			}
-		}
-		*/
-		
-		// Soluzione 2
-		
+
 		for (Auto a : auto) {
 			s += String.format("%s. La resa è di %.2f km/l\n", a.toString(), a.resa());
 		}
