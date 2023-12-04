@@ -1,4 +1,4 @@
-package libro.cap12;
+package libro.cap12.es1;
 
 public class Rectangle {
     private double width;

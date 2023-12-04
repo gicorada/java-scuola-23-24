@@ -1,4 +1,4 @@
-package libro.cap12;
+package libro.cap12.es1;
 
 public class Tester {
     public static void main(String[] args) {
