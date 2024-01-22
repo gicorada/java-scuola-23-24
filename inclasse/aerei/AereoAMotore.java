@@ -40,4 +40,26 @@ public class AereoAMotore extends Aeromobile {
 	public String toString() {
 		return super.toString() + ", Cavalli " + cv;
 	}
+
+	@Override
+	public boolean equals(Object obj)  {
+		if(!super.equals(obj)) return false;
+		AereoAMotore a = (AereoAMotore) obj;
+		
+		return cv == a.cv;
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode() + (int) cv;
+	}
+
+	@Override
+	public int compareTo(Aeromobile o) {
+		if(o.getClass() != getClass()) throw new ClassCastException();
+
+		AereoAMotore a = (AereoAMotore) o;
+
+		return Double.compare(cv, a.cv);
+	}
 }

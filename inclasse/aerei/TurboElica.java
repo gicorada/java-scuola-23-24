@@ -41,4 +41,27 @@ public class TurboElica extends AereoAMotore {
 	public String toString() {
 		return super.toString() + ", Giri per minuto "+ rpm;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!super.equals(obj)) return false;
+
+		TurboElica a = (TurboElica) obj;
+		
+		return rpm == a.rpm;
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode() + (int) rpm * 47;
+	}
+
+	@Override
+	public int compareTo(Aeromobile o) {
+		if(o.getClass() != getClass()) throw new ClassCastException();
+
+		TurboElica a = (TurboElica) o;
+
+		return rpm - a.rpm;
+	}
 }

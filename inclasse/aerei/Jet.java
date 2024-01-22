@@ -41,4 +41,27 @@ public class Jet extends AereoAMotore {
 	public String toString() {
 		return super.toString() + ", Numero motori " + getMotori();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!super.equals(obj)) return false;
+
+		Jet a = (Jet) obj;
+		
+		return motori == a.motori;
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode() + (int) motori;
+	}
+
+	@Override
+	public int compareTo(Aeromobile o) {
+		if(o.getClass() != getClass()) throw new ClassCastException();
+
+		Jet a = (Jet) o;
+
+		return motori - a.motori;
+	}
 }

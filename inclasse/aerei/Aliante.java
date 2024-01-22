@@ -40,4 +40,27 @@ public class Aliante extends Aeromobile {
 	public String toString() {
 		return super.toString() + ", Efficienza " + getEfficienza();
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!super.equals(obj)) return false;
+
+		Aliante a = (Aliante) obj;
+		
+		return efficienza == a.efficienza;
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode() + (int) efficienza;
+	}
+
+	@Override
+	public int compareTo(Aeromobile o) {
+		if(o.getClass() != getClass()) throw new ClassCastException();
+
+		Aliante a = (Aliante) o;
+
+		return efficienza - a.efficienza;
+	}
 }
