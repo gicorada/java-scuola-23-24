@@ -5,14 +5,12 @@ import java.util.Scanner;
 
 public class Tester {
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-
 		boolean fileLetto = false;
 
 		System.out.println("Inserisci il percorso del file: ");
 
 		do {
-			try {
+			try(Scanner s = new Scanner(System.in)) {
 				String path = s.nextLine();
 				
 				GestoreAuto ges = new GestoreAuto(path);

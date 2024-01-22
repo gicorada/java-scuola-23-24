@@ -19,7 +19,6 @@ public class Auto {
 		this.nome = nome;
 		this.km = km;
 		this.litri = litri;
-		
 	}
 
 	/*
