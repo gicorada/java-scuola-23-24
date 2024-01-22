@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gente>
+    <persona eta="25" sesso="m">
+        <nome>Test1</nome>
+        <cognome>TestC1</cognome>
+    </persona>
+
+    <persona eta="40" sesso="f">
+        <nome></nome>
+        <cognome>TestC2</cognome>
+    </persona>
+    
+    <persona eta="55" sesso="f">
+        <nome>Test3</nome>
+        <cognome>TestC3</cognome>
+    </persona>
+    
+    <persona eta="70" sesso="m">
+        <nome>Test3</nome>
+        <cognome>TestC3</cognome>
+    </persona>
+</gente>
