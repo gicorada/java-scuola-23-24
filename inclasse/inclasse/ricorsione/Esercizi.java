@@ -1,4 +1,4 @@
-package ricorsione;
+package inclasse.ricorsione;
 
 import java.util.Arrays;
 
