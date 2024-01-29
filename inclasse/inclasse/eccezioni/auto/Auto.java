@@ -1,4 +1,4 @@
-package eccezioni.auto;
+package inclasse.eccezioni.auto;
 
 public class Auto {
 	private String nome;

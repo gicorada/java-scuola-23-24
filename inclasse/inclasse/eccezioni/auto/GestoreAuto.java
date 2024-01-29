@@ -1,4 +1,4 @@
-package eccezioni.auto;
+package inclasse.eccezioni.auto;
 
 import java.io.File;
 import java.io.FileNotFoundException;
