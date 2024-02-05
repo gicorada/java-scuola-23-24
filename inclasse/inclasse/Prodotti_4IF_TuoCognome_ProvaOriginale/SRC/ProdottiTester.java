@@ -12,10 +12,17 @@ import java.util.ArrayList;
 public class ProdottiTester {
     public static void main(String[] args){
         ArrayList <Prodotto> prodottiInVendita = new ArrayList<>();
-        GestoreFile gestore = new GestoreFile("prodotti.txt");
+        GestoreFile gestore = new GestoreFile(".\\inclasse\\inclasse\\Prodotti_4IF_TuoCognome_ProvaOriginale\\prodotti.txt");
         prodottiInVendita = gestore.getListaProdotti();
         for (Prodotto p:prodottiInVendita){
-            /*CANCELLAMI E COMPLETA*/
+            try {
+                ((ProdottoAlimentare) p).applicaSconto(10);
+            } catch(ScontoNonApplicabileException e) {
+                System.out.println(e.getMessage());
+            } catch(ClassCastException e) {
+                System.out.println("Per il prodotto " + p.getDescrizione() + " NON E' PREVISTO LO SCONTO");
+            }
+            System.out.println(p + "\n");
         }
         
     }

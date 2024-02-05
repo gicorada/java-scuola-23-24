@@ -1,6 +1,10 @@
 package inclasse.Prodotti_4IF_TuoCognome_ProvaOriginale.SRC;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /* COGNOME e NOME:
    CLASSE:
@@ -38,9 +42,29 @@ public class GestoreFile {
            i vari prodotti nell'ArrayList listaProdotti 
         */
         listaProdotti = new ArrayList<>(); 
-        
-        /* CANCELLAMI E COMPLETA */
-        
+
+        try(Scanner s = new Scanner(new File(nomeFile))) {
+            while (s.hasNextLine()) {
+                String desc = s.next();
+                double prezzo = s.nextDouble();
+    
+                String col3 = s.next();
+                if(isNumeroIntero(col3)) {
+                    int ggscadenza = Integer.parseInt(col3);
+                    boolean daBanco = s.nextBoolean();
+    
+                    if(daBanco) listaProdotti.add(new ProdottoDaBanco(desc, prezzo, ggscadenza));
+                    else listaProdotti.add(new ProdottoAlimentare(desc, prezzo, ggscadenza));
+                } else {
+                    s.nextBoolean();
+                    listaProdotti.add(new ProdottoNonAlimentare(desc, prezzo, col3));
+                }
+            }
+        } catch(FileNotFoundException e) {
+            System.out.println("Impossibile accedere al file con i dati: " + e.getMessage());
+        } catch(InputMismatchException e) {
+            System.out.println("Errore nella lettura di un dato");
+        }
     }
     
     public ArrayList<Prodotto> getListaProdotti(){
@@ -50,9 +74,9 @@ public class GestoreFile {
     private boolean isNumeroIntero(String str) {
         try {
             Integer.parseInt(str);
-            /* CANCELLAMI E COMPLETA */
-        } catch (/* CANCELLAMI E COMPLETA */) {
-            /* CANCELLAMI E COMPLETA */
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }  
 }

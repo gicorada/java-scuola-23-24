@@ -34,8 +34,8 @@ public class ProdottoAlimentare extends Prodotto implements Scontabile {
    
    @Override
    public void applicaSconto(int percentuale) throws ScontoNonApplicabileException {
-      if(!inScadenza()) throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " non può essere scontato perché NON E' ANCORA IN SCADENZA");
       if(scaduto()) throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " non può essere scontato perché INVENDIBILE (SCADUTO)");
+      if(!inScadenza()) throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " non può essere scontato perché NON E' ANCORA IN SCADENZA");
       if(scontato == true) throw new ScontoNonApplicabileException("Il prodotto è già stato scontato");
       setPrezzo(getPrezzo() - getPrezzo() * percentuale / 100);
       scontato = true;

@@ -24,6 +24,6 @@ public class Prodotto {
     
     @Override
     public String toString() {
-        return "Prodotto "+this.getClass().getName()+"\n\tDescrizione: " + descrizione + "\n\tPrezzo: " + prezzo + " euro";
+        return "Prodotto "+this.getClass().getSimpleName()+"\n\tDescrizione: " + descrizione + "\n\tPrezzo: " + prezzo + " euro";
     }  
 }

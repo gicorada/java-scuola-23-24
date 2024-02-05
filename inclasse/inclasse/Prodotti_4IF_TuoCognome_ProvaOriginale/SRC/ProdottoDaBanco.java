@@ -20,29 +20,21 @@ public class ProdottoDaBanco extends ProdottoAlimentare {
 
    @Override
    public void applicaSconto(int percentuale) throws ScontoNonApplicabileException {
+      if(scaduto()) {
+         setPrezzo(0);
+         throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " non può essere scontato perché INVENDIBILE (SCADUTO)");
+      }
       if(!inScadenza()) throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " non può essere scontato perché NON E' ANCORA IN SCADENZA");
-      if(scaduto()) throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " non può essere scontato perché INVENDIBILE (SCADUTO)");
-      
-      if(giaScontato() && !scontatoScadenzaImminente) {
-         setPrezzo(getPrezzo() - getPrezzo() * 0.5);
-         setScontato(true);
-         scontatoScadenzaImminente = true;
-         return;
-      }
 
-      if(!giaScontato() && scontatoScadenzaImminente) {
+      if(!giaScontato()) {
          setPrezzo(getPrezzo() - getPrezzo() * percentuale / 100);
          setScontato(true);
-         scontatoScadenzaImminente = true;
-         return;
       }
       
-      if(!giaScontato() && !scontatoScadenzaImminente) {
-         setPrezzo(getPrezzo() - getPrezzo() * percentuale / 100);
+      if(!scontatoScadenzaImminente && scadenzaImminente()) {
          setPrezzo(getPrezzo() - getPrezzo() * 0.5);
          setScontato(true);
          scontatoScadenzaImminente = true;
-         return;
       }
       
       throw new ScontoNonApplicabileException("Il prodotto " + getDescrizione() + " è già stato scontato");
